@@ -64,9 +64,7 @@ async def on_guild_join(guild):
     await text_channel[0].send("yo yo yo")
 
 # to make sure that you have the correct token and start the bot
-# and the keep_alive function above is connected to the flask server
-# that is written in the keep_alive file and it was made to keep it alive
-# as long as the flask server was active
+
 # the load_dotenv function makes it able to read the .env file so that it can read the token from the .env file
 
 load_dotenv()
