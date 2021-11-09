@@ -34,7 +34,6 @@ async def sh(ctx, message):
 
 # this is a command that makes it possible to invite a user
 
-
 @Client.command(name='invite', pass_context=True)
 async def invite(ctx, *argument):
     # this will create an invite link
@@ -47,9 +46,13 @@ logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
 
 Handler = logging.FileHandler(
-    filename='discord.log', encoding='utf-8', mode='w')
+    filename='discord.log', 
+    encoding='utf-8', 
+    mode='w'
+    )
 Handler.setFormatter(logging.Formatter(
-    '%(asctime)s:%(levelname)s:%(name)s:%(message)s'))
+    '%(asctime)s:%(levelname)s:%(name)s:%(message)s'
+    ))
 logger.addHandler(Handler)
 
 
@@ -58,7 +61,8 @@ async def on_guild_join(guild):
     print(guild.channels)
     print([i.type for i in guild.channels])
     text_channel = [
-        channel for channel in guild.channels if channel.type is discord.ChannelType.text]
+        channel for channel in guild.channels if channel.type is discord.ChannelType.text
+    ]
 
     print(text_channel)
     await text_channel[0].send("yo yo yo")
